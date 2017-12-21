@@ -1,0 +1,17 @@
+ <!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.pratik.domain.PhoneNumber" table="phone_numbersOTM_BI">
+		<id name="phone" /> <!-- Singular Identifier Cfg -->
+		<property name="numberType" column="number_type" />
+		<property name="Operator" column="Operator" />
+		<many-to-one name="person"
+					class="com.pratik.domain.User"
+					cascade="all"
+					column="unid"
+					lazy="proxy">
+		</many-to-one>
+	</class>
+</hibernate-mapping>
